@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.nimworks</groupId>
-  <artifactId>buildversion-maven-plugin</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>buildversions-maven-plugin</artifactId>
+  <version>1.0.0</version>
   <packaging>maven-plugin</packaging>
 
   <name>Build Versions Maven Plugin</name>
@@ -58,7 +58,7 @@
         <artifactId>maven-plugin-plugin</artifactId>
         <version>3.2</version>
         <configuration>
-          <goalPrefix>buildversion-maven-plugin</goalPrefix>
+          <goalPrefix>buildversions-maven-plugin</goalPrefix>
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
         </configuration>
         <executions>
@@ -78,6 +78,16 @@
       </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+	  <snapshotRepository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	  <repository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	  </repository>
+	</distributionManagement>
   <profiles>
     <profile>
       <id>run-its</id>
