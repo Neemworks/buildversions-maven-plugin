@@ -17,8 +17,8 @@
     <plugins>
       <plugin>
         <groupId>com.nimworks</groupId>
-        <artifactId>buildversion-maven-plugin</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>buildversions-maven-plugin</artifactId>
+        <version>1.0.0</version>
         <executions>
           <execution>
             <id>touch</id>
@@ -28,6 +28,9 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+
+        </configuration>
       </plugin>
     </plugins>
   </build>
