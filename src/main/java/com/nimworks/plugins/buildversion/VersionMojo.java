@@ -10,12 +10,12 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
-import nw.commons.props.KeyProperties;
+import com.nimworks.commons.props.KeyValueProperties;
 
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.INITIALIZE, requiresProject = true, threadSafe = true)
 public class VersionMojo extends AbstractMojo {
 
-	 @Parameter( defaultValue = "${basedir}/.versions" )
+	 @Parameter( defaultValue = "${basedir}/.build/semantics.properties" )
 	 private File versionsFile;
 
 	 @Parameter(property = "build.type", defaultValue = "PATCH", required = true)
@@ -26,7 +26,7 @@ public class VersionMojo extends AbstractMojo {
 
 	public void execute() throws MojoExecutionException, MojoFailureException {
 		String revision = "";
-		KeyProperties kp = new KeyProperties(versionsFile.getName());
+		KeyValueProperties kp = new KeyValueProperties(versionsFile);
 		Integer major = kp.getInt("major-version", 1);
 		Integer minor = kp.getInt("minor-version", 1);
 		Integer patch = kp.getInt("patch-version", 1);
