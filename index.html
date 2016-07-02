@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Buildversions-maven-plugin by Neemworks</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Buildversions-maven-plugin</h1>
+        <p>Maven plugin for Semantic Versioning</p>
+
+        <p class="view"><a href="https://github.com/Neemworks/buildversions-maven-plugin">View the Project on GitHub <small>Neemworks/buildversions-maven-plugin</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Neemworks/buildversions-maven-plugin/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Neemworks/buildversions-maven-plugin/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Neemworks/buildversions-maven-plugin">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h1>
+
+<p>This plugin aims to automate the generation of <a href="http://semver.org/">semantic version</a> numbers for your maven project.</p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+
+<ul>
+<li>Add the dependency to your pom.xml</li>
+</ul>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
+  &lt;<span class="pl-ent">groupId</span>&gt;com.nimworks&lt;/<span class="pl-ent">groupId</span>&gt;
+  &lt;<span class="pl-ent">artifactId</span>&gt;buildversions-maven-plugin&lt;/<span class="pl-ent">artifactId</span>&gt;
+  &lt;<span class="pl-ent">version</span>&gt;1.0.0&lt;/<span class="pl-ent">version</span>&gt;
+  &lt;<span class="pl-ent">type</span>&gt;maven-plugin&lt;/<span class="pl-ent">type</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+
+<ul>
+<li>Do something with the generate version number
+For example </li>
+</ul>
+
+<pre><code>&lt;groupId&gt;com.nimworks.it&lt;/groupId&gt;
+  &lt;artifactId&gt;simple-it&lt;/artifactId&gt;
+  &lt;version&gt;${buildVersion}-SNAPSHOT&lt;/version&gt;
+
+  &lt;description&gt;A simple IT&lt;/description&gt;
+</code></pre>
+
+<p>Builds are currently separated into 3 types</p>
+
+<ul>
+<li>Major</li>
+<li>Minor</li>
+<li>Patch</li>
+</ul>
+
+<p>The generated version takes the form {Major}.{Minor}.{Pathc}</p>
+
+<h1>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h1>
+
+<ul>
+<li><p>Build PATCH
+<code>mvn clean package</code>
+if this is the first run, it will generate app-1.0.0-SNAPSHOT.jar. Subsequent executions will only increment the patch version number (1.0.1, 1.0.2, etc). The example above is the same as running <code>mvn clean package -Dbuild.type=PATCH</code></p></li>
+<li><p>Build Minor Version
+<code>mvn clean package -Dbuild.type=MINOR</code>
+if this is the first run, it will generate app-1.1.0-SNAPSHOT.jar. Subsequent executions will only increment the patch version number (1.2.0, 1.3.0, etc). Notice that this mode will reset the patch versions to 0</p></li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Neemworks">Neemworks</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
