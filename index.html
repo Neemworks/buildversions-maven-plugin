@@ -37,15 +37,23 @@
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
 
 <ul>
-<li>Add the dependency to your pom.xml</li>
+<li>Add the pluginto your pom.xml</li>
 </ul>
 
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
-  &lt;<span class="pl-ent">groupId</span>&gt;com.nimworks&lt;/<span class="pl-ent">groupId</span>&gt;
-  &lt;<span class="pl-ent">artifactId</span>&gt;buildversions-maven-plugin&lt;/<span class="pl-ent">artifactId</span>&gt;
-  &lt;<span class="pl-ent">version</span>&gt;1.0.0&lt;/<span class="pl-ent">version</span>&gt;
-  &lt;<span class="pl-ent">type</span>&gt;maven-plugin&lt;/<span class="pl-ent">type</span>&gt;
-&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">plugin</span>&gt;
+        &lt;<span class="pl-ent">groupId</span>&gt;com.nimworks&lt;/<span class="pl-ent">groupId</span>&gt;
+        &lt;<span class="pl-ent">artifactId</span>&gt;buildversion-maven-plugin&lt;/<span class="pl-ent">artifactId</span>&gt;
+        &lt;<span class="pl-ent">version</span>&gt;1.0.0&lt;/<span class="pl-ent">version</span>&gt;
+        &lt;<span class="pl-ent">executions</span>&gt;
+          &lt;<span class="pl-ent">execution</span>&gt;
+            &lt;<span class="pl-ent">id</span>&gt;buildversions&lt;/<span class="pl-ent">id</span>&gt;
+            &lt;<span class="pl-ent">phase</span>&gt;validate&lt;/<span class="pl-ent">phase</span>&gt;
+            &lt;<span class="pl-ent">goals</span>&gt;
+              &lt;<span class="pl-ent">goal</span>&gt;generate&lt;/<span class="pl-ent">goal</span>&gt;
+            &lt;/<span class="pl-ent">goals</span>&gt;
+          &lt;/<span class="pl-ent">execution</span>&gt;
+        &lt;/<span class="pl-ent">executions</span>&gt;
+      &lt;/<span class="pl-ent">plugin</span>&gt;</pre></div>
 
 <ul>
 <li>Do something with the generate version number
