@@ -1,4 +1,4 @@
-package com.nimworks.plugins.buildversion;
+package com.nimworks.mojo;
 
 public enum BuildType {
 

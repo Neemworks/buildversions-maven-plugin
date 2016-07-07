@@ -49,6 +49,11 @@
     	<artifactId>maven-project</artifactId>
     	<version>2.2.1</version>
     </dependency>
+    <dependency>
+    	<groupId>org.apache.maven.scm</groupId>
+    	<artifactId>maven-scm-api</artifactId>
+    	<version>1.9.4</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -58,23 +63,9 @@
         <artifactId>maven-plugin-plugin</artifactId>
         <version>3.2</version>
         <configuration>
-          <goalPrefix>buildversions-maven-plugin</goalPrefix>
+          <goalPrefix>buildversions</goalPrefix>
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
         </configuration>
-        <executions>
-          <execution>
-            <id>mojo-descriptor</id>
-            <goals>
-              <goal>descriptor</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>help-goal</id>
-            <goals>
-              <goal>helpmojo</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
       	<groupId>org.sonatype.plugins</groupId>
@@ -100,6 +91,11 @@
           </goals>
         </execution>
       </executions>
+      </plugin>
+      <plugin>
+      	<groupId>org.apache.maven.plugins</groupId>
+      	<artifactId>maven-plugin-plugin</artifactId>
+      	<version>3.2</version>
       </plugin>
     </plugins>
   </build>
@@ -129,13 +125,18 @@
   </licenses>
   <scm>
   	<url>https://github.com/Neemworks/buildversions-maven-plugin</url>
-  	<developerConnection>Ogwara O. Rowland</developerConnection>
-  	<tag>maven, plugins</tag>
-  	<connection>https://github.com/Neemworks/buildversions-maven-plugin</connection>
+  	<developerConnection>scm:git:ssh://github.com/Neemworks/buildversions-maven-plugin.git</developerConnection>
+  	<tag>HEAD</tag>
+  	<connection>scm:git:https://github.com/Neemworks/buildversions-maven-plugin.git</connection>
   </scm>
   <organization>
   	<name>Neemworks Nigeria</name>
   	<url>http://www.nimworks.com</url>
   </organization>
   <description>Maven plugin for Semantic Versioning</description>
+  <issueManagement>
+  	<url>https://github.com/Neemworks/buildversions-maven-plugin/issues</url>
+  	<system>Github</system>
+  </issueManagement>
+  <inceptionYear>2016</inceptionYear>
 </project>
